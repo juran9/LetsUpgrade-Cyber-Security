@@ -1,0 +1,114 @@
+Question 1:Find out the mail servers of the following domain :Ibm.com   Wipro.com
+
+Solution: 
+The domains were discovered using a tool by the name of "dnsrecon"
+
+Command used:
+sudo dnsrecon -d wipro.com
+
+OUTPUT:
+[*] Performing General Enumeration of Domain: wipro.com
+[-] DNSSEC is not configured for wipro.com
+[*] 	 SOA ns1.webindia.com 50.16.170.116
+[*] 	 NS ns2.webindia.com 34.235.29.171
+[*] 	 NS ns1.webindia.com 50.16.170.116
+[*] 	 NS ns4.webindia.com 54.66.0.69
+[*] 	 MX wipro-com.mail.protection.outlook.com 104.47.124.36     //MAIL SERVER
+[*] 	 MX wipro-com.mail.protection.outlook.com 104.47.125.36     //MAIL SERVER
+[*] 	 A wipro.com 209.11.159.61
+[*] 	 TXT wipro.com pardot251472=13aeffa099cedd351829341b3a6ee29fb791e24a0f68721f370ac75b00d7689f
+[*] 	 TXT wipro.com google-site-verification=LRrKiogCTJ59Dd97tVt2EESdFMo0bG_IA_r6WZC3gFo
+[*] 	 TXT wipro.com v=spf1 include:spf.protection.outlook.com include:et._spf.pardot.com include:_netblocks.google.com include:_netblocks2.google.com include:_netblocks3.google.com include:mktomail.com include:azmail.opuscmc.com -all
+[*] 	 TXT wipro.com r6q6lw9dqks4xkq3fl6bb69j7qb12tgb
+[*] 	 TXT wipro.com dropbox-domain-verification=9pl7a78ilm1a
+[*] 	 TXT wipro.com RRyXBaHwWVQQK4JmOOsC+D1iWvF2ql1CwgmY3HSI6yhNUeGHWaleAJVum6Wb9QDSOStXTDTOzbpoSjHqvsgyyA==
+[*] 	 TXT _domainkey.wipro.com t=y; o=~;
+
+
+Command used:
+sudo dnsrecon -d ibm.com
+
+OUTPUT:
+[*] Performing General Enumeration of Domain: ibm.com
+[-] DNSSEC is not configured for ibm.com
+[*] 	 SOA asia3.akam.net 23.211.61.64
+[*] 	 NS ns1-206.akam.net 193.108.91.206
+[*] 	 NS ns1-206.akam.net 2600:1401:2::ce
+[*] 	 NS ns1-99.akam.net 193.108.91.99
+[*] 	 NS ns1-99.akam.net 2600:1401:2::63
+[*] 	 NS usc2.akam.net 184.26.160.64
+[*] 	 NS usc3.akam.net 96.7.50.64
+[*] 	 NS eur2.akam.net 95.100.173.64
+[*] 	 NS asia3.akam.net 23.211.61.64
+[*] 	 NS eur5.akam.net 23.74.25.64
+[*] 	 NS usw2.akam.net 184.26.161.64
+[*] 	 MX mx0a-001b2d01.pphosted.com 148.163.156.1     //MAIL SERVER
+[*] 	 MX mx0b-001b2d01.pphosted.com 148.163.158.5     //MAIL SERVER
+[*] 	 A ibm.com 129.42.38.10
+[*] 	 TXT ibm.com facebook-domain-verification=kyuxs3tdqtyh9rbqa3szkq3k9i2bbs
+[*] 	 TXT ibm.com google-site-verification=Jck8mLbYYfCnrmi_nRy4MG2fbUN3UGhC29KdspGLd9Y
+[*] 	 TXT ibm.com adobe-idp-site-verification=5f8adca7-512f-44e1-a5b2-b62c5e3763f2
+[*] 	 TXT ibm.com 40a21f5affe343c6b37e0a5af80dcd93
+[*] 	 TXT ibm.com apple-domain-verification=M3o953J0rN1B0P2a
+[*] 	 TXT ibm.com 00d00000000hedieay
+[*] 	 TXT ibm.com atlassian-domain-verification=WAjTH82C5Zx475WLKAA2nrdlsoA/kN0ej9igrLrED4h15KMHPOm+A5H3GndKAxDC
+[*] 	 TXT ibm.com amazonses:79ShwQazteb+WkCt8e297sAC2mwZVRditsrzaoxiHjU=
+[*] 	 TXT ibm.com google-site-verification=tzdngH5fWH-k8uQoDVovOFJQZTwaGtDOP6S2cQlOvCs
+[*] 	 TXT ibm.com yandex-verification: 5f458b477256c50c
+[*] 	 TXT ibm.com 00df40000004784eaa
+[*] 	 TXT ibm.com v=spf1 ip4:148.163.158.5 ip4:148.163.156.1 ip4:67.231.145.127 ip4:67.231.153.87 ip4:168.245.101.145 mx a:zgateway.zuora.com include:_spf.google.com ~all
+[*] 	 TXT ibm.com MS=ms61389031
+[*] 	 TXT ibm.com 00d50000000c9mweay
+
+//************************************************************************************************************************************************************************
+Question 2: Find the locations, where these email servers are hosted.
+
+Solution: The IP addresses were scanned through the online utility https://dnslytics.com
+
+Commands:
+
+firefox dnslytics.com/ip/104.47.124.36
+firefox dnslytics.com/ip/104.47.125.36
+firefox dnslytics.com/ip/148.163.156.1 
+firefox dnslytics.com/ip/148.163.158.5
+
+OUTPUT:
+Locations:
+
+104.47.124.36 : Central and Western District, Hongkong(HK)
+104.47.125.36 : Singapore(SG)
+148.163.156.1 : United States (US)
+148.163.158.5 : United States (US)
+
+//************************************************************************************************************************************************************************
+Question 3:Scan and find out port numbers open 203.163.246.23
+
+Solution: The given IP was scanned using NMAP
+
+Command: nmap -Pn -T4 -v -A 203.163.246.23
+
+ERROR: Host is unreachable or down. Confirmed by ping command. 100% packet data loss.
+
+//************************************************************************************************************************************************************************
+Question 4:Install nessus in a VM and scan your laptop/desktop for CVE.
+
+Solution:
+
+1. Navigate to https://www.tenable.com/downloads/nessus
+2. Download the appropriate version. Mine was Debian 64 bit
+3. Register with the website with name and email to get the authentication code via email.
+4. Goto Kali terminal, cd to Downloads folder.
+5. Dpkg -i [instalation file name]
+6. After completion start the service by systemctl as prompted in the terminal
+7. Navigate to the local host on port 8834 to start with Nessus.
+8. Enter Authcode sent via email.
+9. Wait for initialization to complete.
+10. Log on to Nessus.
+11.Goto Advanced tab and create a scan against the local system.
+12. CLick on the Scan to get the list of vulnerabilities
+
+
+//*************************************************************************************************************************************************************************
+
+
+
