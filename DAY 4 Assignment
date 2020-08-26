@@ -87,7 +87,11 @@ Solution: The given IP was scanned using NMAP
 
 Command: nmap -Pn -T4 -v -A 203.163.246.23
 
-ERROR: Host is unreachable or down. Confirmed by ping command. 100% packet data loss.
+ERROR: Host is unreachable or being protected by firewall.
+
+Retrying with firewall evasion scan: nmap -sF -f -p- -T4 203.163.246.23 
+
+OUTPUT: Ports are filtered but appear to be open.
 
 //************************************************************************************************************************************************************************
 Question 4:Install nessus in a VM and scan your laptop/desktop for CVE.
